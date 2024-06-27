@@ -119,7 +119,8 @@ public class E3DCConnector {
             dOut.flush();
             return right(encryptedFrame.length);
         } catch (Exception e) {
-            logger.error("Error while encrypting and sending frame.", e);
+//            logger.error("Error while encrypting and sending frame.", e);
+            logger.error("Error while encrypting and sending frame.");
             return left(e);
         }
     }
@@ -160,7 +161,8 @@ public class E3DCConnector {
 
             return right(decryptedData);
         } catch (Exception e) {
-            logger.error("Error while receiving and decrypting frame.", e);
+            logger.debug("Got Error while receiving and decrypting frame.");
+//            logger.debug("Error while receiving and decrypting frame.", e);
             return left(e);
         }
     }
